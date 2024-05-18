@@ -5,7 +5,7 @@ import { CoreConcept } from "./CoreConcept";
 export function CoreConceptsSection(){
     return(
         <section id="core-concepts">
-          <h2>Core concepsts</h2>
+          <h2>Core Concepsts</h2>
           <ul>
             {/* {/* We can set in here the properties of our component
             <CoreConceps

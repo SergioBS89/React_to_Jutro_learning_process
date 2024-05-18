@@ -144,9 +144,12 @@ section#core-concepts{
 #adjectiveConcepts{
   color: #ea00ff;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: medium;
 }
 
 #textFooterConcepts{
   color: #00b7ff;
+}
+
+pre #code{
+  color: rgb(252, 195, 40);
 }

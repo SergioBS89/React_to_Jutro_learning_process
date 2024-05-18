@@ -6,7 +6,7 @@ export default function ExamplesCode({selectedtopic}) {
             <h3>{EXAMPLES[selectedtopic].title}</h3>
             <p>{EXAMPLES[selectedtopic].description}</p>
             <pre>
-                <code>
+                <code id="code">
                     {EXAMPLES[selectedtopic].code}
                 </code>
             </pre>

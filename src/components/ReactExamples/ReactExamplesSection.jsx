@@ -1,4 +1,3 @@
-import { EXAMPLES } from "../../data"
 import SectionTabButton from "./SectionTabButton";
 import { TabButton } from "./TabButton"
 import { useState } from 'react';
