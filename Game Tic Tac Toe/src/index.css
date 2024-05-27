@@ -20,8 +20,8 @@ html {
 body {
   background: radial-gradient(
       circle at top,
-      rgba(241, 210, 70, 0.98),
-      rgba(250, 176, 103, 0.87)
+      rgba(70, 73, 241, 0.98),
+      rgba(189, 2, 2, 0.87)
     ),
     url('bg-pattern-dark.png');
   background-repeat: repeat;
@@ -44,7 +44,7 @@ h1 {
   font-family: 'Caprasimo', cursive;
   font-size: 3rem;
   margin: 0 auto 3rem auto;
-  color: #3f3b00;
+  color: #dee2d3;
 }
 
 #game-container {
@@ -75,13 +75,23 @@ h1 {
 }
 
 #players.highlight-player li.active {
-  border-color: #f6e35a;
+  border-color: #0e00d1;
   animation: pulse 2s infinite ease-in-out;
+}
+
+#players.highlight-player-two li.active {
+  border-color: #c90000;
+  animation: pulse-two 2s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
 #players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+  color: #826df8;
+}
+
+#players.highlight-player-two li.active .player-name,
+#players.highlight-player-two li.active .player-symbol {
+  color: #f86d6d;
 }
 
 #players button {
@@ -134,8 +144,8 @@ h1 {
 
 .player-symbol {
   margin-left: 1rem;
-  font-size: 1rem;
-  color: #e1dec7;
+  font-size: 1.5rem;
+  color: #b3a7a7;
 }
 
 ol {
@@ -241,7 +251,7 @@ ol {
 
 #log {
   max-width: 20rem;
-  color: #3f3b00;
+  color: #eeeeee;
   list-style: none;
   margin: 2rem auto;
   padding: 0;
@@ -252,11 +262,20 @@ ol {
   border-radius: 4px;
   animation: slide-in-from-left 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   margin: 0.75rem;
+  background-color: #262529;
 }
 
 #log li.highlighted {
   background-color: #3f3b00;
   color: white;
+}
+
+.playerOneLog{
+  color: rgb(177, 0, 0);
+}
+
+.playerTwoLog{
+  color: rgb(57, 55, 197);
 }
 
 #game-hints {
@@ -322,15 +341,31 @@ ol {
 
 @keyframes pulse {
   0% {
-    border-color: #f6e35a;
+    border-color: #474af8;
     box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
   }
   50% {
-    border-color: #f8c031;
+    border-color: #1201ac;
     box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
   }
   100% {
-    border-color: #f6e35a;
+    border-color: #5d5af6;
+    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
+  }
+}
+
+
+@keyframes pulse-two{
+  0% {
+    border-color: #f84747;
+    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
+  }
+  50% {
+    border-color: #ac0101;
+    box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
+  }
+  100% {
+    border-color: #f34242;
     box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
   }
 }
