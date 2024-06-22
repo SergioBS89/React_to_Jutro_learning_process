@@ -1,4 +1,21 @@
+import { useEffect } from "react";
+
 export default function DeleteConfirmation({ onConfirm, onCancel }) {
+
+  /**Another example using useEffect, is to close the modal after x seconds... but be careful beacuse to implement this use effect,`
+   *  is necessary use the hook useCallback to avoid an infinite loop*/
+  useEffect(() => {
+    const timerToCloseModal = setTimeout(()=>{
+      console.log("starts")
+      onConfirm()
+    }, 5000);
+
+    return () => {
+      console.log("end")
+      clearTimeout(timerToCloseModal);
+    };
+  }, [onConfirm]);
+  
   return (
     <div id="delete-confirmation">
       <h2>Are you sure?</h2>
@@ -11,6 +28,7 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
           Yes
         </button>
       </div>
+      <progress />
     </div>
   );
 }
