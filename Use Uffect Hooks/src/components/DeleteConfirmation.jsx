@@ -1,6 +1,9 @@
 import { useEffect } from "react";
+import ProgressBar from "./ProgressBar";
 
 export default function DeleteConfirmation({ onConfirm, onCancel }) {
+
+  const TIMER = 3000;
 
   /**Another example using useEffect, is to close the modal after x seconds... but be careful beacuse to implement this use effect,`
    *  is necessary use the hook useCallback to avoid an infinite loop*/
@@ -8,7 +11,7 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
     const timerToCloseModal = setTimeout(()=>{
       console.log("starts")
       onConfirm()
-    }, 5000);
+    }, TIMER);
 
     return () => {
       console.log("end")
@@ -28,7 +31,7 @@ export default function DeleteConfirmation({ onConfirm, onCancel }) {
           Yes
         </button>
       </div>
-      <progress />
+      <ProgressBar timer={TIMER}/>
     </div>
   );
 }
