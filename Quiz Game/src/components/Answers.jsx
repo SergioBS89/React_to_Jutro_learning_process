@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-export default function Answers({ listAnswers, selectedOne, answerState, onSelect }) {
+export default function Answers({ listAnswers, selectedAnswer, answerState, onSelectAnswer }) {
 
     /**
   * Use ref is to target a object in any moment of the life cicle.
@@ -21,20 +21,22 @@ export default function Answers({ listAnswers, selectedOne, answerState, onSelec
     return (
         <ul id='answers'>
             {mixedAnswers.current.map((answer) => {
-                let lastAnsweSelected = selectedOne === answer
+                let lastAnswerSelected = selectedAnswer === answer
                 let cssStyle = ''
 
-                if (answerState === 'answered' && lastAnsweSelected) {
+                if (answerState === 'answered' && lastAnswerSelected) {
                     cssStyle = 'selected'
                 }
 
-                if ((answerState === 'correct' || answerState === 'wrong') && lastAnsweSelected) {
+                if ((answerState === 'correct' || answerState === 'wrong') && lastAnswerSelected) {
                     cssStyle = answerState
                 }
                 return <li key={answer} className='answer'>
                     <button
                         className={cssStyle}
-                        onClick={onSelect}>{answer}</button>
+                        onClick={()=> onSelectAnswer(answer)}
+                        disabled={answerState !== ''}
+                        >{answer}</button>
                 </li>
             })}
         </ul>
